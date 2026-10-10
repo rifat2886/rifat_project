@@ -18,6 +18,7 @@ struct HistoryRecord {
 // গ্লোবাল মেমোরি লিস্ট (অনলাইন কম্পাইলারে কাজ করার জন্য)
 vector<User> registeredUsers;
 vector<HistoryRecord> userHistory;
+const string ADMIN_PASSWORD = "admin123";
 
 // --- AUTHENTICATION & ADMIN FUNCTIONS ---
 
@@ -68,7 +69,7 @@ void adminPanel() {
     cout << "\nEnter Admin Secret Password: ";
     cin >> pass;
 
-    if (pass == "admin123") {
+    if (pass == ADMIN_PASSWORD) {
         cout << "\n=== ADMIN PANEL: REGISTERED USERS ===\n";
         if (registeredUsers.empty()) {
             cout << ">> No users registered yet!\n";
@@ -272,7 +273,7 @@ void showReports(const string &user) {
 void controlPanel() {
     cout << "\n--- 12. Control Panel ---\n";
     cout << ">> System Version: 1.0 (Online/Mobile Ready)\n";
-    cout << ">> Admin Passcode: admin123\n";
+    cout << ">> Admin Passcode: Hidden for security\n";
 }
 
 // 13. Exit
